@@ -7,33 +7,40 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
-import javax.security.auth.login.Configuration;
+import org.hibernate.cfg.Configuration;
 
 public class HibernateForwardEngineering {
     public static void main(String[] args) {
 
-        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-                .configure()
-                .build();
-
-//        SessionFactory factory = new MetadataSources(registry)
-//                .buildMetadata()
-//                .buildSessionFactory();
-
-        SessionFactory factory new Configuration().co
-
-        Session session = factory.openSession();
-        Transaction transaction = session.beginTransaction();
-
         Product product = new Product();
-        product.setName("iPhone 10");
-        product.setPrice(999.88f);
+        product.setName("Tesla Model Y");
+        product.setDescription("This is the latest item coming this fall");
+        product.setPrice(64000.81F);
+
+        SessionFactory sessionFactory = new Configuration()
+                .configure()
+                .buildSessionFactory();
+
+        System.out.println("-----LOADING SESSION FACTORY------");
+
+        Session session = sessionFactory.openSession();
+        System.out.println("-----SESSION OPENED-----");
+
+        session.beginTransaction();
+        System.out.println("-----TRANSACTION ENTRANCE-----");
 
         session.save(product);
-        transaction.commit();
+        System.out.println("-----OBJECT SAVED-----");
+
+        session.getTransaction().commit();
+        System.out.println("-----OBJECT COMMITTED-----");
+
         session.close();
-        factory.close();
+        System.out.println("-----SESSION CLOSED-----");
+
+        sessionFactory.close();
+        System.out.println("-----SESSION-FACTORY CLOSED-----");
+
     }
 
 
