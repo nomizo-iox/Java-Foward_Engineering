@@ -15,7 +15,7 @@ public class HibernateForwardEngineering {
         Product product = new Product();
         product.setName("Tesla Model Y");
         product.setDescription("This is the latest item coming this fall");
-        product.setPrice(64000.81F);
+        product.setPrice(64000.81f);
 
         SessionFactory sessionFactory = new Configuration()
                 .configure()
