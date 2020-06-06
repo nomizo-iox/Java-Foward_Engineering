@@ -8,5 +8,11 @@
 
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
+
+    <!--This gives hiberate the ability to create, drop, update, or delete tables-->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+        <mapping class="com.nomizo.model.Product" />
+
     </session-factory>
 </hibernate-configuration>
