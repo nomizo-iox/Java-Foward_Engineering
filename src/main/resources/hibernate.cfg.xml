@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://nomizodb-do-user-6621383-0.a.db.ondigitalocean.com:25060/lab</property>
-        <property name="connection.username">doadmin</property>
-        <property name="connection.password">dl41ga9bofbves9a</property>
+        <property name="connection.url">url</property>
+        <property name="connection.username">username</property>
+        <property name="connection.password">password</property>
         <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
         <property name="hibernate.show_sql">true</property>
